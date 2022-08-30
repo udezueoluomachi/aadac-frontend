@@ -1,0 +1,71 @@
+.header-preceeder {
+    background-image: url("../images/aadac illustration bg.jpg");
+}
+.subscrition-form-section {
+    margin: 40px auto;
+    padding: 10px;
+    width: max-content;
+}
+input.input-section {
+    height: 44px
+}
+.input-section {
+    width: 300px;
+    margin: 10px 0;
+    padding: 5px;
+}
+input.input-section:not(input[type='submit']) , textarea {
+    border: 2px solid var(--pure-black);
+    color: var(--pure-black);
+    resize: none;
+}
+input[type='submit'] {
+    border: none;
+}
+::placeholder {
+    color: var(--pure-black);
+}
+
+/*responsiveness*/
+@media only screen and (min-width:360px) and (max-width:400px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:500px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:600px) {
+    h1 {
+        font-size: 5.4vw !important;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:800px) {
+    h1 {
+        font-size: 4.4vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:600px) {
+    .header-preceeder-texts-cont * {
+        text-align: center;
+        margin: auto;
+    }
+}
+@media only screen and (min-width:600px) {
+    .header-preceeder-texts-cont * {
+        text-align: center;
+        margin: auto;
+    }
+    .link-to-newsletter-in-landing-page {
+        display: block;
+        width: max-content;
+        margin-top: 50px;
+    }
+    .header-preceeder-texts-cont h1 {
+        font-size: 3.3vw;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+    }
+}

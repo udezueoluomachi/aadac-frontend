@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aaDac , AADAC news , Africa and Africa Diaspora Artists Community"/>
+    <title>Post News - aaDAC</title>
+    <meta name="description" content="Post news on the aaDAC platform"/>
+
+    <!--social media tags-->
+    <meta name="og:title" content="Post News - aaDAC" />
+    <meta name="og:description" content="Post news on the aaDAC platform" />
+    <!--remember to finish this later-->
+    
+
+    <!--resources-->
+    <link rel="icon" href="../images/favicon.png" sizes="16x16"/>
+    <link rel="stylesheet" href="../styles/css/all.css">
+    <link rel="stylesheet" href="../styles/fonts.css"/>
+    <link rel="stylesheet" href="../styles/all.css">
+    <link rel="stylesheet" href="../styles/newsposting-page.css"/>
+    <script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+    <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/index.js"></script>
+</head>
+<body>
+    <div class="body">
+        <div class="header flex">
+            <button class="larger-size no-bg no-border side-menu-toggle-trigger inline-block" title="menu">
+                <span class="fas fa-bars"></span>
+            </button>
+            <a href="../" class="logo-link logo-in-header-mid">
+                <img src="../images/logo.png" alt="aaDAC" class="logo-in-header-mid inline-block"/>
+            </a>
+        </div>
+        <h1 class="larger-size">
+            Post news
+        </h1>
+        <div class="posting-form-section">
+            <form action="#" class="subscription-form">
+                <label for="name-input">Author's name *</label>
+                <br/>
+                <input type="text" placeholder="Name"  class="input-section" id="name-input" required title="Type your name"/>
+                <br/>
+                <label for="title-input">News title *</label>
+                <br/>
+                <input type="text" placeholder="Title"  class="input-section" id="title-input" required title="Type article title"/>
+                <br/>
+                <label for="img-input">Cover photo *</label>
+                <br/>
+                <input type="file" accept="image/*" placeholder="Cover photo"  class="input-section" id="title-input" required title="Upload cover photo"/>
+                <br/>
+                <label for="description-input">News description *</label>
+                <br/>
+                <textarea placeholder="News description" id="description-input" class="input-section" title="Type in the descriptio  of this news"></textarea>
+                <br/>
+                <p>
+                    News contents *
+                </p>
+                <br/>
+                <div class="article-content-cont">
+                    <div id="news-contents-carrier"></div>
+                </div>
+                <textarea id="contents" class="none" cols="30" rows="10"></textarea>
+                <input type="submit" value="Post" class="input-section pure-black-bg text-pure-white-color" title="Post news">
+            </form>
+        </div>
+        <div class="footer pure-black-bg">
+            <div class="footer-nav">
+                <ul>
+                    <li>
+                        <a href="../" class="text-pure-white-color">Home</a>
+                    </li>
+                    <li>
+                        <a href="../about" class="text-pure-white-color">About us</a>
+                    </li>
+                    <li>
+                        <a href="../contact" class="text-pure-white-color">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="#career" class="text-pure-white-color">Careers</a>
+                    </li>
+                    <li>
+                        <a href="#resources" class="text-pure-white-color">Resources</a>
+                    </li>
+                    <li>
+                        <a href="../donate" class="text-pure-white-color">Donate</a>
+                    </li>
+                    <li>
+                        <a href="#press" class="text-pure-white-color">Press</a>
+                    </li>
+                    <li>
+                        <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
+                    </li>
+                    <li>
+                        <a href="#policies" class="text-pure-white-color">Privacy policy</a>
+                    </li>
+                </ul>
+            </div>
+            <br/>
+            <div class="centered-last-footer-section">
+                <h2 class="text-pure-white-color centered-text centered-block-x">
+                    aaDAC
+                </h2>
+                <br/>
+                <div class="horizontally-aligned-social-links centered-text centered-block-x">
+                    <a href="#" class="socoal-link-in-footer">
+                        <span class="fab fa-linkedin text-pure-white-color"></span>
+                    </a>
+                    <a href="#" class="socoal-link-in-footer">
+                        <span class="fab fa-facebook text-pure-white-color"></span>
+                    </a>
+                    <a href="#" class="socoal-link-in-footer">
+                        <span class="fab fa-instagram text-pure-white-color"></span>
+                    </a>
+                    <a href="#" class="socoal-link-in-footer">
+                        <span class="fab fa-youtube text-pure-white-color"></span>
+                    </a>
+                    <a href="#" class="socoal-link-in-footer">
+                        <span class="fab fa-twitter text-pure-white-color"></span>
+                    </a>
+                </div>
+                <br/>
+                <p class="text-pure-white-color centered-text small-size">
+                    &copy; 2022 aaDAC. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(
+            () => {
+                const name_input = $("#name-input");
+                const email_input = $("#email-input");
+                const location_input = $("#location-input");
+                const description_input = $("#description-input");
+                const submit_btn = $("input[type='submit']");
+                const contents = $("#contents")
+
+                const inputs = [name_input , email_input , location_input , description_input];
+
+                ClassicEditor
+                    .create( document.querySelector( '#news-contents-carrier' ) )
+                    .then( editor => {
+                        editor.model.document.on( 'change:data', () => {
+                            contents.val(editor.getData());/*
+                            editor.getData().trim() === "" ? $(".topic-contents").html(`
+                                <p class="centered-text">
+                                    The preview of you article would appear here
+                                </p>`) : $(".topic-contents").html(editor.getData());
+                            validateForm();*/
+                        } );
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+
+                submit_btn.click(
+                    e => {
+                        e.preventDefault();
+
+                        if(inputs.some(e => e.val().toString().trim() === "")) {
+                            swal("Some fields are empty", "Fill them to continue" , "info");
+                        }
+                        else {
+
+                            swal("Subscribing...","Please wait", {
+                                buttons : false,
+                                closeOnEsc : false,
+                                closeOnClickOutside : false
+                            });
+    
+                            const xhttp = new XMLHttpRequest();
+    
+                            xhttp.onload = function() {
+                                let response = this.responseText;
+                                data = JSON.parse(response);
+                                swal.close();
+                                localStorage.setItem("email_address",email_input.val());
+                                if(data.res === "Subscribed") {
+                                    swal("Subscribed" , name_input.val() + ", thanks for subscribing to our newsletter. You will get email notifications when we post contents on our site.","success");
+                                    inputs.forEach(e => e.val(""));
+                                }
+                                else {
+                                    swal("Opps" , "You have already subcribed with this email address", "info");
+                                }
+                            };
+    
+                            xhttp.open("POST" , "http://localhost:2022/", true);
+    
+                            xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    
+                            xhttp.send(`name=${name_input.val()}&email_address=${email_input.val()}&location=${location_input.val()}&work_description=${description_input.val()}&req_name=newsletter-subscription`);
+                        }
+                    }
+                )
+            }
+        );
+    </script>
+</body>
+</html>

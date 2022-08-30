@@ -1,0 +1,66 @@
+.header-preceeder {
+    background-image: url("../images/aadac about illustration.jpg");
+}
+.section-2 {
+    padding: 20px 10px;
+    margin: 20px 0;
+}
+.section-2-inner {
+    min-height: max-content;
+    height: 80vh;
+    max-height: 500px;
+    width: 100%;
+    border: 2px solid var(--pure-black);
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.descriptive-section {
+    margin: 40px 0;
+    padding: 20px 10px;
+}
+.descriptive-section h2 {
+    margin-top: 50px;
+}
+.descriptive-section p {
+    margin-top: 20px;
+}
+
+/*responsiveness*/
+@media only screen and (min-width:360px) and (max-width:400px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:500px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:600px) {
+    h1 {
+        font-size: 5.4vw !important;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:800px) {
+    h1 {
+        font-size: 4.4vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:600px) {
+    .header-preceeder-texts-cont * {
+        text-align: center;
+        margin: auto;
+    }
+}
+@media only screen and (min-width:600px) {
+    .header-preceeder-texts-cont * {
+        text-align: center;
+        margin: auto;
+    }
+    .header-preceeder-texts-cont h1 {
+        font-size: 3.3vw;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+    }
+}

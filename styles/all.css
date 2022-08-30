@@ -1,0 +1,203 @@
+@charset "UTF-8";
+:root {
+    --pure-black : #000000;
+    --pure-white : #ffffff;
+    --pure-black-transparent : #00000067;
+    --light-grey: #D2D3D5;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins regular" , 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--pure-black);
+}
+html , body {
+    background-color: var(--pure-white);
+    overflow-x: hidden;
+}
+
+/*for layouts & displays*/
+.flex {
+    display: flex;
+}
+.block {
+    display: block;
+}
+.none {
+    display: none;
+}
+.inline-block {
+    display: inline-block;
+}
+.centered-block-x {
+    margin: auto;
+}
+
+/*backgrounds*/
+.no-bg {
+    background: transparent;
+}
+.pure-black-bg {
+    background-color: var(--pure-black);
+}
+
+/*font-sizes*/
+.small-size {
+    font-size: small;
+}
+.smaller-size {
+    font-size: smaller;
+}
+.large-size {
+    font-size: larger;
+}
+.normal-size {
+    font-size: large;
+}
+.larger-size {
+    font-size: x-large;
+}
+.xtra-large-size {
+    font-size: xx-large;
+}
+
+/*alignment*/
+.centered-text {
+    text-align: center;
+}
+
+/*colors*/
+.text-pure-white-color {
+    color: var(--pure-white);
+}
+.text-pure-black-color {
+    color: var(--pure-black);
+}
+
+/*borders*/
+.no-border {
+    border: none;
+}
+
+/*general classes that span across site*/
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline dotted;
+}
+a:active , button:active {
+    opacity: 0.6;
+}
+.logo-in-header-mid {
+    height: 50px;
+    margin: auto;
+}
+.header {
+    height: 10vh;
+    min-height: max-content;
+    width: 100vw;
+    align-items: center;
+    padding: 5px 10px;
+}
+.header-preceeder {
+    min-height: 90vh;
+    width: 100vw;
+    max-height: max-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-origin: border-box;
+}
+.header-preceeder-texts-cont {
+    min-height: inherit;
+    max-height: inherit;
+    width: 100%;
+    padding: 50px 10px;
+    background-color: var(--pure-black-transparent);
+}
+.h1-cont {
+    max-width: 920px;
+}
+h1 {
+    font-family: "poppins bold extra";
+}
+h2 {
+    font-family: "poppins bold";
+}
+.footer {
+    padding: 20px 10px;
+}
+.cowork-section a , .newsletter-text-cont a {
+    width: max-content;
+    padding: 10px;
+}
+.cowork-section h2 , .newsletter-text-cont h2 , .cowork-section p  , .newsletter-text-cont p, .newsletter-text-cont a , .cowork-section a {
+    margin-top: 30px;
+}
+.footer {
+    margin-top: 20px;
+}
+.newsletter-text-cont a {
+    border : 2px solid ;
+}
+.footer-nav li , .pop-nav li {
+    list-style-type: none;
+}
+.footer-nav , .centered-last-footer-section {
+    margin-top: 40px;
+}
+.socoal-link-in-footer {
+    margin: 0 2px;
+}
+.swal-button , .swal-button:hover {
+    background-color: var(--pure-black);
+    color: var(--pure-white);
+}
+.pop-nav li {
+    text-align: left;
+}
+
+/*responsiveness*/
+
+@media only screen and (min-width:360px) and (max-width:400px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:500px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:600px) {
+    h1 {
+        font-size: 5vw !important;
+    }
+}
+@media only screen and (min-width:600px) {
+    .footer-nav {
+        text-align: center;
+        margin: 70px auto 0;
+        width: max-content;
+    }
+    hr {
+        width: 40vw;
+        margin:auto;
+    }
+    .newsletter-text-cont , .cowork-section {
+        margin: auto;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:800px) {
+    .newsletter-text-cont , .cowork-section {
+        max-width: 80vw;
+    }
+}
+@media only screen and (min-width:800px) {
+    .newsletter-text-cont , .cowork-section {
+        max-width: 40vw;
+    }
+}

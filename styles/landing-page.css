@@ -1,0 +1,79 @@
+.header {
+    justify-content: space-between;
+}
+.donate-btn-cont {
+    padding: 4px 10px;
+    border-radius: 100px;
+}
+.header-preceeder {
+    background-image: url("../images/aadac illustration bg.jpg");
+}
+.link-to-newsletter-in-landing-page {
+    margin-top: 60px;
+    padding: 10px 30px;
+}
+.news-diaply-section , .cowork-section {
+    padding: 20px 10px;
+}
+.section-for-displaying-news {
+    height: 350px;
+    width: 100%;
+    border: 2px solid var(--pure-black);
+    /*this syle feature is just to show*/
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+h1 {
+    margin-top: 55px !important;
+}
+
+/*responsiveness*/
+@media only screen and (min-width:360px) and (max-width:400px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:500px) {
+    h1 {
+        font-size: 7vw !important;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:600px) {
+    h1 {
+        font-size: 5.4vw !important;
+    }
+}
+@media only screen and (min-width:600px) and (max-width:800px) {
+    h1 {
+        font-size: 4.4vw !important;
+    }
+}
+@media only screen and (min-width:400px) and (max-width:600px) {
+    .header-preceeder-texts-cont * {
+        text-align: center;
+        margin: auto;
+    }
+    .link-to-newsletter-in-landing-page {
+        display: block;
+        width: max-content;
+        margin-top: 50px;
+    }
+}
+@media only screen and (min-width:600px) {
+    .header-preceeder-texts-cont * {
+        text-align: center;
+        margin: auto;
+    }
+    .link-to-newsletter-in-landing-page {
+        display: block;
+        width: max-content;
+        margin-top: 50px;
+    }
+    .header-preceeder-texts-cont h1 {
+        font-size: 3.3vw;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+        margin-top: 110px !important;
+    }
+}
