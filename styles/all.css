@@ -116,7 +116,7 @@ a:active , button:active {
     max-height: inherit;
     width: 100%;
     padding: 50px 10px;
-    background-color: var(--pure-black-transparent);
+    background-color: #00000067;
 }
 .h1-cont {
     max-width: 920px;
