@@ -39,22 +39,22 @@
             Post news
         </h1>
         <div class="posting-form-section">
-            <form action="#" class="subscription-form">
+            <form id="news-form" enctype="multipart/form-data" class="subscription-form">
                 <label for="name-input">Author's name *</label>
                 <br/>
-                <input type="text" placeholder="Name"  class="input-section" id="name-input" required title="Type your name"/>
+                <input type="text" placeholder="Name" name="name" class="input-section" id="name-input" required title="Type your name"/>
                 <br/>
                 <label for="title-input">News title *</label>
                 <br/>
-                <input type="text" placeholder="Title"  class="input-section" id="title-input" required title="Type article title"/>
+                <input type="text" placeholder="Title" name="title" class="input-section" id="title-input" required title="Type article title"/>
                 <br/>
                 <label for="img-input">Cover photo *</label>
                 <br/>
-                <input type="file" accept="image/*" placeholder="Cover photo"  class="input-section" id="title-input" required title="Upload cover photo"/>
+                <input type="file" accept="image/*" placeholder="Cover photo" name="cover_photo" class="input-section" id="img-input" required title="Upload cover photo"/>
                 <br/>
                 <label for="description-input">News description *</label>
                 <br/>
-                <textarea placeholder="News description" id="description-input" class="input-section" title="Type in the descriptio  of this news"></textarea>
+                <textarea placeholder="News description" name="description" id="description-input" class="input-section" title="Type in the descriptio of this news"></textarea>
                 <br/>
                 <p>
                     News contents *
@@ -63,7 +63,7 @@
                 <div class="article-content-cont">
                     <div id="news-contents-carrier"></div>
                 </div>
-                <textarea id="contents" class="none" cols="30" rows="10"></textarea>
+                <textarea id="contents" name="content" class="none" cols="30" rows="10"></textarea>
                 <input type="submit" value="Post" class="input-section pure-black-bg text-pure-white-color" title="Post news">
             </form>
         </div>
@@ -133,17 +133,65 @@
         $(document).ready(
             () => {
                 const name_input = $("#name-input");
-                const email_input = $("#email-input");
-                const location_input = $("#location-input");
+                const title_input = $("#title-input");
+                const cover_input = $("#img-input");
                 const description_input = $("#description-input");
+                const contents = $("#contents");
                 const submit_btn = $("input[type='submit']");
-                const contents = $("#contents")
 
-                const inputs = [name_input , email_input , location_input , description_input];
+                let access_granted = false;
 
-                ClassicEditor
-                    .create( document.querySelector( '#news-contents-carrier' ) )
-                    .then( editor => {
+                function request_access() {
+                    swal("Type access key", {
+                        content : {
+                            element : "input",
+                            attributes : {
+                                type : "password",
+                                placeholder : "*******"
+                            }
+                        },
+                        button : "Continue",
+                        closeOnEsc : false,
+                        closeOnClickOutside : false
+                    })
+                    .then(password => {
+                        password = `${password}`.trim();
+                        if(password !== "") {
+                            swal("Requesting access...","Please wait", {
+                                buttons : false,
+                                closeOnEsc : false,
+                                closeOnClickOutside : false
+                            });
+                            const xhttp = new XMLHttpRequest();
+                            xhttp.onload = function() {
+                                let response = this.responseText;
+                                let data = JSON.parse(response);
+                                swal.close();
+                                if(data.res === "granted") {
+                                    access_granted = true;
+                                }
+                                else {
+                                    access_granted = false;
+                                    request_access();
+                                }
+                            }
+                            xhttp.open("POST", "http://localhost:2022/",true);
+                            xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                            xhttp.send(`key=${password}&req_name=grant-access`)
+                        }
+                        else {
+                            request_access();
+                        }
+                    });
+                }
+                request_access();
+
+                const form = document.getElementById("news-form");
+
+                const inputs = [name_input , title_input , cover_input , description_input , contents];
+
+                ClassicEditor.create( document.querySelector( '#news-contents-carrier' ) )
+                .then( editor => {
                         editor.model.document.on( 'change:data', () => {
                             contents.val(editor.getData());/*
                             editor.getData().trim() === "" ? $(".topic-contents").html(`
@@ -153,7 +201,7 @@
                             validateForm();*/
                         } );
                     } )
-                    .catch( error => {
+                .catch( error => {
                         console.error( error );
                     } );
 
@@ -165,37 +213,48 @@
                             swal("Some fields are empty", "Fill them to continue" , "info");
                         }
                         else {
-
-                            swal("Subscribing...","Please wait", {
-                                buttons : false,
-                                closeOnEsc : false,
-                                closeOnClickOutside : false
-                            });
+                            if(access_granted === true) {
+                                swal("Subscribing...","Please wait", {
+                                    buttons : false,
+                                    closeOnEsc : false,
+                                    closeOnClickOutside : false
+                                });
+        
+                                const xhttp = new XMLHttpRequest();
+                                const fd = new FormData(form);
+        
+                                xhttp.onload = function() {
+                                    let response = this.responseText;
+                                    data = JSON.parse(response);
+                                    swal.close();
+                                    if(data.res === "title-exists") {
+                                        swal("Not Posted", "A news with this title has already been posted","errr");
+                                    }
+                                    else {
+                                        swal("Posted", "News has been posted successfully and newsletter has been sent to users. News URL :" + data.news_url , "success" , {
+                                            buttons : ["Okay","View news"]
+                                        }).then(value => {
+                                            if(value) {
+                                                location.assign(data.news_url);
+                                            }
+                                        })
+                                    }
     
-                            const xhttp = new XMLHttpRequest();
-    
-                            xhttp.onload = function() {
-                                let response = this.responseText;
-                                data = JSON.parse(response);
-                                swal.close();
-                                localStorage.setItem("email_address",email_input.val());
-                                if(data.res === "Subscribed") {
-                                    swal("Subscribed" , name_input.val() + ", thanks for subscribing to our newsletter. You will get email notifications when we post contents on our site.","success");
-                                    inputs.forEach(e => e.val(""));
+                                };
+                                xhttp.onerror = () => {
+                                    swal("Opps","An unknown error occured","error");
                                 }
-                                else {
-                                    swal("Opps" , "You have already subcribed with this email address", "info");
-                                }
-                            };
-    
-                            xhttp.open("POST" , "http://localhost:2022/", true);
-    
-                            xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    
-                            xhttp.send(`name=${name_input.val()}&email_address=${email_input.val()}&location=${location_input.val()}&work_description=${description_input.val()}&req_name=newsletter-subscription`);
+        
+                                xhttp.open("POST" , "http://localhost:2022/post", true);
+        
+                                xhttp.send(fd);
+                            }
+                            else {
+                                request_access();
+                            }
                         }
                     }
-                )
+                );
             }
         );
     </script>

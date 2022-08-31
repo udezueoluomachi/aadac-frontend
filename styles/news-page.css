@@ -1,0 +1,29 @@
+.descriptive-section {
+    margin: 0 0 0px;
+    padding: 20px 10px;
+}
+.descriptive-section h2 , h3 , h4{
+    margin-top: 30px;
+}
+.descriptive-section p {
+    margin-top: 20px;
+}
+.descriptive-section li {
+    margin-left: 30px;
+}
+.header {
+    border-bottom: 0.6px solid var(--light-grey);
+}
+h1 {
+    margin: 20px 10px 0;
+}
+.cover-photo {
+    height: 70vh;
+    width: 90vw;
+    margin-left: 20px;
+}
+.cover-photo img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}

@@ -34,6 +34,9 @@ h1 {
 .header {
     border-bottom: 0.6px solid var(--light-grey);
 }
+.article-content-cont li {
+    margin-left: 30px;
+}
 
 /*responsiveness*/
 @media only screen and (min-width:360px) and (max-width:400px) {
