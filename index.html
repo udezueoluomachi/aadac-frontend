@@ -11,7 +11,13 @@
     <!--social media tags-->
     <meta name="og:title" content="aaDAC" />
     <meta name="og:description" content="aaDAC is a nonprofit network building and empowering a community of artists across Africa and the Diaspora with the inspiration and information they need to affect critical change within their local communities." />
-    <!--remember to finish this later-->
+    <meta name="og:image" content="https://aadacnetwork.com/images/LOGO AADAC ALT-02.png" />
+    <meta name="og:url" content="https://aadacnetwork.com/" />
+    <meta property="twitter:card" content="https://aadacnetwork.com/images/LOGO AADAC ALT-02.png">
+    <meta property="twitter:description" content="aaDAC is a nonprofit network building and empowering a community of artists across Africa and the Diaspora with the inspiration and information they need to affect critical change within their local communities.">
+    <meta property="twitter:image" content="https://aadacnetwork.com/images/LOGO AADAC ALT-02.png">
+    <meta property="twitter:title" content="aaDAC">
+    <meta property="twitter:url" content="https://aadacnetwork.com/">
     
 
     <!--resources-->
@@ -48,7 +54,29 @@
                 News
             </h2>
             <div class="section-for-displaying-news flex">
-                <p>This section would display few of the latest news when you have</p>
+                <div class="news-card">
+                    <div class="new-card-image-cont"></div>
+                    <div class="text-contents-for-news">
+                        <p class="news-title"></p>
+                        <p class="news-description-cont"></p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="new-card-image-cont"></div>
+                    <div class="text-contents-for-news">
+                        <p class="news-title"></p>
+                        <p class="news-description-cont"></p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="new-card-image-cont"></div>
+                    <div class="text-contents-for-news">
+                        <p class="news-title"></p>
+                        <p class="news-description-cont"></p>
+                    </div>
+                </div>
+                <!--
+                <p>This section would display few of the latest news when you have</p>-->
             </div>
         </div>
         <div class="cowork-section">
@@ -63,7 +91,7 @@
         <div class="footer pure-black-bg">
             <div class="newsletter-text-cont">
                 <h2 class="centered-block-x centered-text text-pure-white-color">
-                    Subscribe to Our Newsletter
+                    Become a Changemaker Insider
                 </h2>
                 <p class="description-paragraph-for-motivator-text centered-block-x centered-text text-pure-white-color">
                     Subscribe to our newsletter to get updates on exclusive art resources, information and stories within our community
@@ -83,22 +111,13 @@
                         <a href="./contact" class="text-pure-white-color">Contact us</a>
                     </li>
                     <li>
-                        <a href="#career" class="text-pure-white-color">Careers</a>
-                    </li>
-                    <li>
-                        <a href="#resources" class="text-pure-white-color">Resources</a>
+                        <a href="#publications" class="text-pure-white-color">Publications</a>
                     </li>
                     <li>
                         <a href="./donate" class="text-pure-white-color">Donate</a>
                     </li>
                     <li>
-                        <a href="#press" class="text-pure-white-color">Press</a>
-                    </li>
-                    <li>
                         <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
-                    </li>
-                    <li>
-                        <a href="#policies" class="text-pure-white-color">Privacy policy</a>
                     </li>
                 </ul>
             </div>
@@ -126,9 +145,56 @@
                     </a>
                 </div>
                 <br/>
+                <div class="horizontally-aligned-social-links centered-text centered-block-x">
+                    <a href="#" class="socoal-link-in-footer text-pure-white-color">
+                        Privacy Info |
+                    </a>
+                    <a href="https://aadacnetwork.com/" class="socoal-link-in-footer text-pure-white-color">
+                        aaDACnetwork.com
+                    </a>
+                </div>
+                <br/>
                 <p class="text-pure-white-color centered-text small-size">
-                    &copy; 2022 aaDAC. All rights reserved.
+                    aaDAC Art | Africa Diaspora &copy; 2022
                 </p>
+                <p class="text-pure-white-color centered-text small-size">
+                    aaDAC online is publishe by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="side-menu-outer-cont none">
+        <div class="side-menu pure-white-bg">
+            <div class="header-in-menu flex">
+                <button class="larger-size no-bg no-border side-menu-toggle-trigger inline-block text-pure-white-color pure-black-bg" title="close menu">X</button>
+            </div>
+            <div class="pop-nav">
+                <ul>
+                    <li>
+                        <a href=".">Home</a>
+                    </li>
+                    <li>
+                        <a href="./about">About us</a>
+                    </li>
+                    <li>
+                        <a href="./cowork">Co-work</a>
+                    </li>
+                    <li>
+                        <a href="#publications">Publications</a>
+                    </li>
+                    <li>
+                        <a href="#residences">Art residencies and opportunities</a>
+                    </li>
+                    <li>
+                        <a href="./donate">Donate</a>
+                    </li>
+                    <li>
+                        <a href="#policies">Privacy policy</a>
+                    </li>
+                    <li>
+                        <a href="./contact">Contact us</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -136,45 +202,20 @@
         $(document).ready(
             () => {
                 const menu_toggle_trigger = $(".side-menu-toggle-trigger");
-                const menu_link = document.createElement("div");
-                menu_link.innerHTML = `
-                <div class="pop-nav">
-                    <ul>
-                        <li>
-                            <a href=".">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about">About us</a>
-                        </li>
-                        <li>
-                            <a href="./contact">Contact us</a>
-                        </li>
-                        <li>
-                            <a href="./cowork">Co-work</a>
-                        </li>
-                        <li>
-                            <a href="#resources">Resources</a>
-                        </li>
-                        <li>
-                            <a href="./donate">Donate</a>
-                        </li>
-                        <li>
-                            <a href="#press">Press</a>
-                        </li>
-                        <li>
-                            <a href="#advertise">Partner & Advertise with us</a>
-                        </li>
-                        <li>
-                            <a href="#policies">Privacy policy</a>
-                        </li>
-                    </ul>
-                </div>`;
-                menu_toggle_trigger.click(() => {
-                    swal("Menu", {
-                        buttons : "Close",
-                        content : menu_link
-                    });
-                })
+                const side_menu = $(".side-menu-outer-cont");
+                let menu_displayed =  false;
+                menu_toggle_trigger.click( ()=> {
+                    if(menu_displayed) {
+                        side_menu.addClass("none");
+                        menu_displayed = false;
+                    }
+                    else {
+                        side_menu.removeClass("none");
+                        menu_displayed = true;
+                    }
+                });
+
+                const section_for_displaying_latest_news = $(".section-for-displaying-news");
             }
         );
     </script>

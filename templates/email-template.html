@@ -4,89 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter</title>
-    <meta name="description" content="${fields.description}"/>
-    
-    <!--remember to finish this later-->
-    
-
-    <!--resources-->
-    <link rel="icon" href="../images/favicon.png" sizes="16x16"/>
-    <link rel="stylesheet" href="../styles/css/all.css">
-    <link rel="stylesheet" href="../styles/fonts.css"/>
-    <link rel="stylesheet" href="../styles/all.css">
-    <link rel="stylesheet" href="../styles/news-page.css">
 </head>
 <body>
-    <div class="body">
-        <div class="header flex">
-            <a href="../" class="logo-link logo-in-header-mid"><!--${req.headers.origin} for the image logo and other externals-->
-                <img src="../images/logo.png" alt="aaDAC" class="logo-in-header-mid inline-block"/>
+    <div style="color: #000000;">
+        <div style="border-bottom: 0.6px solid #D2D3D5;display: flex;height: 10vh;min-height: max-content;width: 100vw;align-items: center;padding: 5px 10px;">
+            <a href="https://aadacnetwork.com/" style="height: 50px;margin: auto; display: inline-block;">
+                <img src="https://aadacnetwork.com/images/logo.png" alt="aaDAC" style="display: inline-block; height: 32px; margin: auto;"/>
             </a>
         </div>
-        <div class="descriptive-section">
-            <h1>Hello , Name</h1>
-            <p>We have posted a new News on our network. Click the link below to view it.</p>
-            <a href="" class="link-to-view-new block text-pure-white-color pure-black-bg" style="width: max-content; padding: 10px; margin: 12px;" title="View news">View news</a>
+        <div style="margin: 0 0 0px;padding: 20px 10px;">
+            <h1 style="margin-top: 30px;">Hello, ${e.name}</h1>
+            <p style="margin-top: 20px;">We have posted a new News on our network. Use the link below to view it.</p>
+            <a href="${news_url}" style="text-decoration: none; background-color: #000000; color: #ffffff; display:block; width: max-content; padding: 10px;" title="View news">View news</a>
         </div>
-        <div class="footer pure-black-bg">
-            <div class="footer-nav">
-                <ul>
-                    <li>
-                        <a href="${req.headers.origin}/" class="text-pure-white-color">Home</a>
-                    </li>
-                    <li>
-                        <a href="${req.headers.origin}/about" class="text-pure-white-color">About us</a>
-                    </li>
-                    <li>
-                        <a href="${req.headers.origin}/contact" class="text-pure-white-color">Contact us</a>
-                    </li>
-                    <li>
-                        <a href="#career" class="text-pure-white-color">Careers</a>
-                    </li>
-                    <li>
-                        <a href="#resources" class="text-pure-white-color">Resources</a>
-                    </li>
-                    <li>
-                        <a href="${req.headers.origin}/donate" class="text-pure-white-color">Donate</a>
-                    </li>
-                    <li>
-                        <a href="#press" class="text-pure-white-color">Press</a>
-                    </li>
-                    <li>
-                        <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
-                    </li>
-                    <li>
-                        <a href="#policies" class="text-pure-white-color">Privacy policy</a>
-                    </li>
-                </ul>
-            </div>
-            <br/>
-            <div class="centered-last-footer-section">
-                <h2 class="text-pure-white-color centered-text centered-block-x">
-                    aaDAC
+        <div style="background-color: #000000; padding: 20px 10px; color: #ffffff;" >
+            <div>
+                <h2 style="text-align:center;">
+                    Follow us
                 </h2>
-                <br/>
-                <div class="horizontally-aligned-social-links centered-text centered-block-x">
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-linkedin text-pure-white-color"></span>
+                <div style="text-align:center; ">
+                    <a href="#" style="color: #ffffff; text-decoration: none;">
+                        linkedin
                     </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-facebook text-pure-white-color"></span>
+                    <br/>
+                    <a href="#" style="color: #ffffff; text-decoration: none;">
+                        Facebook
                     </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-instagram text-pure-white-color"></span>
+                    <br/>
+                    <a href="#" style="color: #ffffff; text-decoration: none;">
+                        Instagram
                     </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-youtube text-pure-white-color"></span>
+                    <br/>
+                    <a href="#" style="color: #ffffff; text-decoration: none;">
+                        Youtube
                     </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-twitter text-pure-white-color"></span>
+                    <br/>
+                    <a href="#" style="color: #ffffff; text-decoration: none;">
+                        Twitter
                     </a>
                 </div>
                 <br/>
-                <p class="text-pure-white-color centered-text small-size">
-                    &copy; <!--date.get full year -->2022 aaDAC. All rights reserved.
+                <p style="text-align:center; ">
+                    &copy; ${new Date().getFullYear()} aaDAC. All rights reserved.
                 </p>
             </div>
         </div>

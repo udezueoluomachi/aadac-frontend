@@ -18,13 +18,13 @@ $(document).ready(
                     <a href="${location.origin}/cowork">Co-work</a>
                 </li>
                 <li>
-                    <a href="#resources">Resources</a>
+                    <a href="#publications">Publications</a>
                 </li>
                 <li>
                     <a href="${location.origin}/donate">Donate</a>
                 </li>
                 <li>
-                    <a href="#press">Press</a>
+                    <a href="#residences">Art residencies and opportunities</a>
                 </li>
                 <li>
                     <a href="#advertise">Partner & Advertise with us</a>

@@ -16,16 +16,42 @@
     padding: 20px 10px;
 }
 .section-for-displaying-news {
-    height: 350px;
+    height: auto;
     width: 100%;
     border: 2px solid var(--pure-black);
     /*this syle feature is just to show*/
-    justify-content: center;
+    flex-flow: column;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 40px;
+    padding: 5px 2px;
 }
 h1 {
     margin-top: 55px !important;
+}
+.news-card {
+    height: 350px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--light-grey);
+    margin: 4px;
+    padding: 4px;
+}
+.news-card div {
+    width: 100%;
+    border: 1px solid var(--light-grey);
+    margin: 8px auto;
+}
+.new-card-image-cont {
+    height: 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-origin: border-box;
+    background-image: url("../images/aadac illustration bg.jpg");
+}
+.text-contents-for-news {
+    height: 35%;
 }
 
 /*responsiveness*/
@@ -75,5 +101,10 @@ h1 {
         letter-spacing: 2px;
         word-spacing: 10px;
         margin-top: 110px !important;
+    }
+}
+@media only screen and (min-width:800px) {
+    .section-for-displaying-news {
+        flex-flow: row;
     }
 }
