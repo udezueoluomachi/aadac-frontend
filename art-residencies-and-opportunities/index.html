@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="aaDac , AADAC news , Africa and Africa Diaspora Artists Community"/>
-    <title>Donate - aaDAC</title>
-    <meta name="description" content="Join our exclusive community of artists and galleries, individuals and organisations like you from around the world to support our nonprofit network."/>
+    <title>Art Residensies And Opportunities - aaDAC</title>
+    <meta name="description" content="aaDAC art residencies and opportuniities provides visual artists with information on art residencies and opportunities which would help them in their career as artists"/>
 
     <!--social media tags-->
-    <meta name="og:title" content="Donate - aaDAC" />
-    <meta name="og:description" content="Join our exclusive community of artists and galleries, individuals and organisations like you from around the world to support our nonprofit network." />
+    <meta name="og:title" content="Art Residensies And Opportunities - aaDAC" />
+    <meta name="og:description" content="aaDAC art residencies and opportuniities provides visual artists with information on art residencies and opportunities which would help them in their career as artists" />
     <meta name="og:image" content="https://aadacnetwork.com/images/LOGO AADAC ALT-02.png" />
-    <meta name="og:url" content="https://aadacnetwork.com/donate" />
+    <meta name="og:url" content="https://aadacnetwork.com/art-residencies-and-opportunities" />
     <meta property="twitter:card" content="https://aadacnetwork.com/images/LOGO AADAC ALT-02.png">
-    <meta property="twitter:description" content="Join our exclusive community of artists and galleries, individuals and organisations like you from around the world to support our nonprofit network. ">
+    <meta property="twitter:description" content="aaDAC art residencies and opportuniities provides visual artists with information on art residencies and opportunities which would help them in their career as artists">
     <meta property="twitter:image" content="https://aadacnetwork.com/images/LOGO AADAC ALT-02.png">
-    <meta property="twitter:title" content="Donate - aaDAC">
-    <meta property="twitter:url" content="https://aadacnetwork.com/donate">
+    <meta property="twitter:title" content="Art Residensies And Opportunities - aaDAC">
+    <meta property="twitter:url" content="https://aadacnetwork.com/art-residencies-and-opportunities">
     
 
     <!--resources-->
@@ -25,10 +25,14 @@
     <link rel="stylesheet" href="../styles/css/all.css">
     <link rel="stylesheet" href="../styles/fonts.css"/>
     <link rel="stylesheet" href="../styles/all.css">
-    <link rel="stylesheet" href="../styles/donate-page.css">
+    <link rel="stylesheet" href="../styles/residences-page.css">
     <script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../scripts/jquery.js"></script>
     <script src="../scripts/index.js"></script>
+    <script>
+        const page = "residencies"
+    </script>
+    <script src="../scripts/news-fetcher.js"></script>
 </head>
 <body>
     <div class="body">
@@ -44,46 +48,38 @@
             <div class="header-preceeder-texts-cont">
                 <div class="h1-cont">
                     <h1 class="text-pure-white-color larger-size">
-                        Join our exclusive community of artists and galleries. Individuals and organizations like you from around the world are urged to support our nonprofit network.
+                        aaDAC art residencies and opportuniities provides visual artists with information on art residencies and opportunities which would help them in their career as artists
                     </h1>
                 </div>
             </div>
         </div>
-        <div class="descriptive-section">
-            <p>
-                At aaDAC, our artistic community matter to the world, from individuals to civil society. We are a media nonprofit network building a community for artists driving social change across Africa and the Diaspora; empowering artists with the inspiration, resource and information they need to affect critical change within their local communities around the world.
-            </p>
-            <p>
-                For us to continue our work, we depend on the goodwill of supporters and donors from around the world.
-            </p>
-            <p>
-                Through our community driven projects and engagement, which include publication of art news and innovating programs; access and linkage to resources and art platforms, building a community for various stakeholders while re-informing how culture works, communities and the institutions that keep them can be a space for social instigation and change the interface of art and contemporary society.
-            </p>
-            <p>
-                In a world saturated with new media technologies, with the Internet and Artificial Intelligence (AI) playing critical role in how we interact and engage with real and imagined world, cultural work takes on an interface to alter how we see the world.
-            </p>
-            <p>
-                With dislocations caused by global pandemics and international crisis, cultural work and communities that make them call for sustainability, a resilient space where artists can ideate and imagine new realities, linking communities with institutions that nuture them while building sustainable communities for artists to become changemakers. While our work mediate the role of art on society, our nonprofit media focus on the core mission; to empower and inspire a community of artists produce the work needed to affect critical change within their communities.
-            </p>
-            <p>
-                Culturally resilient communities including artists, galleries and art organisations continually count on us, and we, in turn, rely on your donation.
-            </p>
-            <p>
-                Your donation will help us in strengthening our international network, partnering with writers, curators and galleries, from art institutions to academia to amplify our community reach around the world.
-            </p>
-            <p>
-                Through this, we will develop programs, projects and critical publications that empower artists and in turn inspire a global audience.
-            </p>
-            <p>
-                Support us to continue the ongoing work of our nonprofit project by making a one time or recurring contribution
-            </p>
-            <p>
-                Donation can be any amount of your choice
-            </p>
-            <br/>
-            <a href="#" class="block text-pure-white-color pure-black-bg request-link centered-text" title="Donate with paypal">Paypal</a>
-            <br/>
-            <a href="#" class="block text-pure-white-color pure-black-bg request-link centered-text" title="Donate using credit cards">Master & Visa card</a>
+        <div class="residence-outer-cont">
+            <h2>
+                Art Residencies And Opportunity
+            </h2>
+            <div class="section-for-displaying-news flex">
+                <div class="news-card">
+                    <div class="new-card-image-cont"></div>
+                    <div class="text-contents-for-news">
+                        <a href="#" class="news-title block"></a>
+                        <a href="#" class="news-description-cont block"></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="new-card-image-cont"></div>
+                    <div class="text-contents-for-news">
+                        <a href="#" class="news-title block"></a>
+                        <a href="#" class="news-description-cont block"></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="new-card-image-cont"></div>
+                    <div class="text-contents-for-news">
+                        <a href="#" class="news-title block"></a>
+                        <a href="#" class="news-description-cont block"></a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="footer pure-black-bg">
             <div class="newsletter-text-cont">
@@ -99,7 +95,7 @@
             <div class="footer-nav">
                 <ul>
                     <li>
-                        <a href="../" class="text-pure-white-color">Home</a>
+                        <a href=".." class="text-pure-white-color">Home</a>
                     </li>
                     <li>
                         <a href="../about" class="text-pure-white-color">About us</a>
@@ -109,9 +105,6 @@
                     </li>
                     <li>
                         <a href="#publications" class="text-pure-white-color">Publications</a>
-                    </li>
-                    <li>
-                        <a href="../donate" class="text-pure-white-color">Donate</a>
                     </li>
                     <li>
                         <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
@@ -126,16 +119,10 @@
                 <br/>
                 <div class="horizontally-aligned-social-links centered-text centered-block-x">
                     <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-linkedin text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-facebook text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-instagram text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-youtube text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-twitter text-pure-white-color"></span>
@@ -152,10 +139,10 @@
                 </div>
                 <br/>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC Art | Africa Diaspora &copy; 2022
+                    Art / Africa / Diaspora &copy; 2022
                 </p>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC online is publishe by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
+                    aaDAC online is published by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
                 </p>
             </div>
         </div>
@@ -168,25 +155,19 @@
             <div class="pop-nav">
                 <ul>
                     <li>
-                        <a href="../">Home</a>
+                        <a href="..">Home</a>
                     </li>
                     <li>
                         <a href="../about">About us</a>
                     </li>
                     <li>
-                        <a href="../cowork">Co-work</a>
-                    </li>
-                    <li>
                         <a href="#publications">Publications</a>
                     </li>
                     <li>
-                        <a href="#residences">Art residencies and opportunities</a>
+                        <a href="../art-residencies-and-opportunities">Art residencies and opportunities</a>
                     </li>
                     <li>
-                        <a href="../donate">Donate</a>
-                    </li>
-                    <li>
-                        <a href="#policies">Privacy policy</a>
+                        <a href="../newsletter">Membership</a>
                     </li>
                     <li>
                         <a href="../contact">Contact us</a>

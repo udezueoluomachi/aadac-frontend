@@ -6,47 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div style="color: #000000;">
-        <div style="border-bottom: 0.6px solid #D2D3D5;display: flex;height: 10vh;min-height: max-content;width: 100vw;align-items: center;padding: 5px 10px;">
-            <a href="https://aadacnetwork.com/" style="height: 50px;margin: auto; display: inline-block;">
-                <img src="https://aadacnetwork.com/images/logo.png" alt="aaDAC" style="display: inline-block; height: 32px; margin: auto;"/>
-            </a>
-        </div>
-        <div style="margin: 0 0 0px;padding: 20px 10px;">
-            <h1 style="margin-top: 30px;">Hello, ${e.name}</h1>
-            <p style="margin-top: 20px;">We have posted a new News on our network. Use the link below to view it.</p>
-            <a href="${news_url}" style="text-decoration: none; background-color: #000000; color: #ffffff; display:block; width: max-content; padding: 10px;" title="View news">View news</a>
-        </div>
-        <div style="background-color: #000000; padding: 20px 10px; color: #ffffff;" >
-            <div>
-                <h2 style="text-align:center;">
-                    Follow us
-                </h2>
-                <div style="text-align:center; ">
-                    <a href="#" style="color: #ffffff; text-decoration: none;">
-                        linkedin
-                    </a>
+    <div style="width: 100%;">
+        <div style="color: #000000; max-width: 400px; margin: auto;">
+            <div style="border-bottom: 0.6px solid #D2D3D5;display: flex;height: 10vh;min-height: max-content;width: 100vw;align-items: center;padding: 5px 10px;">
+                <a href="https://aadacnetwork.com/" style="height: 50px;margin: auto; display: inline-block;">
+                    <img src="https://aadacnetwork.com/images/logo.png" alt="aaDAC" style="display: inline-block; height: 32px; margin: auto;"/>
+                </a>
+            </div>
+            <div style="margin: 0 0 0px;padding: 20px 10px;">
+                <h1 style="margin-top: 30px;">Hello, ${e.name}</h1>
+                <p style="margin-top: 20px;">We have posted a new News on our network. Use the link below to view it.</p>
+                <p style="margin-top: 20px;">News category : ${category}</p>
+                <a href="${news_url}" style="text-decoration: none; background-color: #000000; color: #ffffff; display:block; width: max-content; padding: 10px;" title="View news">View news</a>
+            </div>
+            <div style="background-color: #000000; padding: 20px 10px; color: #ffffff;" >
+                <div>
+                    <h2 style="text-align:center;">
+                        Follow us
+                    </h2>
+                    <div style="text-align:center; ">
+                        <a href="#" style="color: #ffffff; text-decoration: none;">
+                            Facebook
+                        </a>
+                        <br/>
+                        <a href="#" style="color: #ffffff; text-decoration: none;">
+                            Instagram
+                        </a>
+                        <br/>
+                        <a href="#" style="color: #ffffff; text-decoration: none;">
+                            Twitter
+                        </a>
+                    </div>
                     <br/>
-                    <a href="#" style="color: #ffffff; text-decoration: none;">
-                        Facebook
-                    </a>
-                    <br/>
-                    <a href="#" style="color: #ffffff; text-decoration: none;">
-                        Instagram
-                    </a>
-                    <br/>
-                    <a href="#" style="color: #ffffff; text-decoration: none;">
-                        Youtube
-                    </a>
-                    <br/>
-                    <a href="#" style="color: #ffffff; text-decoration: none;">
-                        Twitter
-                    </a>
+                    <p style="text-align:center; ">
+                        &copy; ${new Date().getFullYear()} aaDAC. All rights reserved.
+                    </p>
                 </div>
-                <br/>
-                <p style="text-align:center; ">
-                    &copy; ${new Date().getFullYear()} aaDAC. All rights reserved.
-                </p>
             </div>
         </div>
     </div>

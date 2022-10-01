@@ -91,7 +91,7 @@ a:active , button:active {
     opacity: 0.6;
 }
 .logo-in-header-mid {
-    height: 50px;
+    height: 34px;
     margin: auto;
 }
 .header {
@@ -196,7 +196,7 @@ h2 {
 }
 @media only screen and (max-width:600px) {
     .logo-in-header-mid {
-        height: 34px;
+        height: 24px;
     }
     .side-menu-toggle-trigger {
         font-size: large;

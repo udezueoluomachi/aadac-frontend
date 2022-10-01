@@ -1,3 +1,13 @@
+iframe {
+    margin-top: 50px;
+}
+.descriptive-section img {
+    margin-left: 20px;
+    /*remember to add responsive style to this*/
+    width: 80vw;
+    height: 70vh;
+    object-fit: cover;
+}
 .descriptive-section {
     margin: 0 0 0px;
     padding: 20px 10px;
@@ -26,4 +36,30 @@ h1 {
     width: inherit;
     height: inherit;
     object-fit: cover;
+}
+blockquote {
+    border-left: 5px solid var(--light-grey);
+    font-style: italic;
+    padding: 13px;
+    background: rgb(241, 241, 241);
+    margin-top: 40px;
+}
+table {
+    margin-top: 37px;
+    padding: 10px;
+    border: 2px solid rgb(241, 241, 241);
+}
+td {
+    padding: 5px;
+}
+tr:nth-child(even) {
+    background: rgb(241, 241, 241);
+}
+figure {
+    max-width: 88vw;
+    overflow-x: auto;
+}
+.descriptive-section a {
+    font-style: italic;
+    font-weight: bold;
 }

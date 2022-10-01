@@ -30,6 +30,7 @@
     <script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
     <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/ckeditor5-image-adapter.js"></script>
     <script src="../scripts/index.js"></script>
 </head>
 <body>
@@ -55,6 +56,13 @@
                 <br/>
                 <input type="text" placeholder="Title" name="title" class="input-section" id="title-input" required title="Type article title"/>
                 <br/>
+                <label for="category-input">News category *</label>
+                <br/>
+                <select name="category" class="input-section" id="category-input">
+                    <option value="General">General</option>
+                    <option value="Art residencies and opportunity">Art residensies & opportunities</option>
+                </select>
+                <br/>
                 <label for="img-input">Cover photo *</label>
                 <br/>
                 <input type="file" accept="image/*" placeholder="Cover photo" name="cover_photo" class="input-section" id="img-input" required title="Upload cover photo"/>
@@ -78,7 +86,7 @@
             <div class="footer-nav">
                 <ul>
                     <li>
-                        <a href="../" class="text-pure-white-color">Home</a>
+                        <a href=".." class="text-pure-white-color">Home</a>
                     </li>
                     <li>
                         <a href="../about" class="text-pure-white-color">About us</a>
@@ -88,9 +96,6 @@
                     </li>
                     <li>
                         <a href="#publications" class="text-pure-white-color">Publications</a>
-                    </li>
-                    <li>
-                        <a href="../donate" class="text-pure-white-color">Donate</a>
                     </li>
                     <li>
                         <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
@@ -105,16 +110,10 @@
                 <br/>
                 <div class="horizontally-aligned-social-links centered-text centered-block-x">
                     <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-linkedin text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-facebook text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-instagram text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-youtube text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-twitter text-pure-white-color"></span>
@@ -131,10 +130,10 @@
                 </div>
                 <br/>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC Art | Africa Diaspora &copy; 2022
+                    Art / Africa / Diaspora &copy; 2022
                 </p>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC online is publishe by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
+                    aaDAC online is published by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
                 </p>
             </div>
         </div>
@@ -147,25 +146,19 @@
             <div class="pop-nav">
                 <ul>
                     <li>
-                        <a href="../">Home</a>
+                        <a href="..">Home</a>
                     </li>
                     <li>
                         <a href="../about">About us</a>
                     </li>
                     <li>
-                        <a href="../cowork">Co-work</a>
-                    </li>
-                    <li>
                         <a href="#publications">Publications</a>
                     </li>
                     <li>
-                        <a href="#residences">Art residencies and opportunities</a>
+                        <a href="../art-residencies-and-opportunities">Art residencies and opportunities</a>
                     </li>
                     <li>
-                        <a href="../donate">Donate</a>
-                    </li>
-                    <li>
-                        <a href="#policies">Privacy policy</a>
+                        <a href="../newsletter">Membership</a>
                     </li>
                     <li>
                         <a href="../contact">Contact us</a>
@@ -220,7 +213,7 @@
                                     request_access();
                                 }
                             }
-                            xhttp.open("POST", "https://backend.aadacnetwork.com/",true);
+                            xhttp.open("POST", /*"https://backend.aadacnetwork.com/"*/"https://backend.aadacnetwork.com/",true);
                             xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
                             xhttp.send(`key=${password}&req_name=grant-access`)
                         }
@@ -235,7 +228,9 @@
 
                 const inputs = [name_input , title_input , cover_input , description_input , contents];
 
-                ClassicEditor.create( document.querySelector( '#news-contents-carrier' ) )
+                ClassicEditor.create( document.querySelector( '#news-contents-carrier' ) , {
+                    extraPlugins: [ MyCustomUploadAdapterPlugin ]
+                })
                 .then( editor => {
                         editor.model.document.on( 'change:data', () => {
                             contents.val(editor.getData());/*
@@ -273,10 +268,10 @@
                                     data = JSON.parse(response);
                                     swal.close();
                                     if(data.res === "title-exists") {
-                                        swal("Not Posted", "A news with this title has already been posted","errr");
+                                        swal("Not Posted", "A news with this title has already been posted","error");
                                     }
                                     else {
-                                        swal("Posted", "News has been posted successfully and newsletter has been sent to users. News URL :" + data.news_url , "success" , {
+                                        swal("Posted", "News has been posted successfully and newsletter has been sent to users. News URL: " + data.news_url , "success" , {
                                             buttons : ["Okay","View news"]
                                         }).then(value => {
                                             if(value) {
@@ -290,7 +285,7 @@
                                     swal("Opps","An unknown error occured","error");
                                 }
         
-                                xhttp.open("POST" , "https://backend.aadacnetwork.com/post", true);
+                                xhttp.open("POST" , /*"https://backend.aadacnetwork.com/post"*/"https://backend.aadacnetwork.com/post", true);
         
                                 xhttp.send(fd);
                             }

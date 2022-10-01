@@ -28,6 +28,10 @@
     <link rel="stylesheet" href="./styles/landing-page.css">
     <script type="text/javascript" src="./node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./scripts/jquery.js"></script>
+    <script>
+        const page = "home"
+    </script>
+    <script src="../scripts/news-fetcher.js"></script>
 </head>
 <body>
     <div class="body">
@@ -57,36 +61,30 @@
                 <div class="news-card">
                     <div class="new-card-image-cont"></div>
                     <div class="text-contents-for-news">
-                        <p class="news-title"></p>
-                        <p class="news-description-cont"></p>
+                        <a href="#" class="news-title block"></a>
+                        <a href="#" class="news-description-cont block"></a>
                     </div>
                 </div>
                 <div class="news-card">
                     <div class="new-card-image-cont"></div>
                     <div class="text-contents-for-news">
-                        <p class="news-title"></p>
-                        <p class="news-description-cont"></p>
+                        <a href="#" class="news-title block"></a>
+                        <a href="#" class="news-description-cont block"></a>
                     </div>
                 </div>
                 <div class="news-card">
                     <div class="new-card-image-cont"></div>
                     <div class="text-contents-for-news">
-                        <p class="news-title"></p>
-                        <p class="news-description-cont"></p>
+                        <a href="#" class="news-title block"></a>
+                        <a href="#" class="news-description-cont block"></a>
                     </div>
                 </div>
-                <!--
-                <p>This section would display few of the latest news when you have</p>-->
             </div>
         </div>
         <div class="cowork-section">
-            <h2 class="centered-block-x centered-text">
-                aaDAC Co-work
-            </h2>
-            <p class="description-paragraph-for-motivator-text centered-block-x centered-text">
-                aaDAC Co-work is a paid curatorial capacity management project designed to help artists across Africa and the Diaspora build high impact curatorial profile that strengthen artistic network.
+            <p class="description-paragraph-for-motivator-text centered-block-x centered-text large-size">
+                aaDAC is a nonprofit media organization building sustainable network for visual artists to become changemakers within their communities across Africa and the Diaspora.
             </p>
-            <a href="./cowork" class="block text-pure-white-color pure-black-bg centered-block-x" title="Learn more about aaDAC co-work">Learn more</a>
         </div>
         <div class="footer pure-black-bg">
             <div class="newsletter-text-cont">
@@ -114,9 +112,6 @@
                         <a href="#publications" class="text-pure-white-color">Publications</a>
                     </li>
                     <li>
-                        <a href="./donate" class="text-pure-white-color">Donate</a>
-                    </li>
-                    <li>
                         <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
                     </li>
                 </ul>
@@ -129,16 +124,10 @@
                 <br/>
                 <div class="horizontally-aligned-social-links centered-text centered-block-x">
                     <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-linkedin text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-facebook text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-instagram text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-youtube text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-twitter text-pure-white-color"></span>
@@ -155,10 +144,10 @@
                 </div>
                 <br/>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC Art | Africa Diaspora &copy; 2022
+                    Art / Africa / Diaspora &copy; 2022
                 </p>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC online is publishe by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
+                    aaDAC online is published by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
                 </p>
             </div>
         </div>
@@ -177,19 +166,13 @@
                         <a href="./about">About us</a>
                     </li>
                     <li>
-                        <a href="./cowork">Co-work</a>
-                    </li>
-                    <li>
                         <a href="#publications">Publications</a>
                     </li>
                     <li>
-                        <a href="#residences">Art residencies and opportunities</a>
+                        <a href="./art-residencies-and-opportunities">Art residencies and opportunities</a>
                     </li>
                     <li>
-                        <a href="./donate">Donate</a>
-                    </li>
-                    <li>
-                        <a href="#policies">Privacy policy</a>
+                        <a href="./newsletter">Membership</a>
                     </li>
                     <li>
                         <a href="./contact">Contact us</a>

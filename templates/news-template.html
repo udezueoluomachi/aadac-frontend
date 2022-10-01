@@ -45,6 +45,7 @@
         <h1>
             ${fields.title}
         </h1>
+        <br/>
         <div class="cover-photo">
             <img src="./${files.cover_photo.originalFilename}" alt="Cover Photo"/>
         </div>
@@ -66,7 +67,7 @@
             <div class="footer-nav">
                 <ul>
                     <li>
-                        <a href="${req.headers.origin}/" class="text-pure-white-color">Home</a>
+                        <a href="${req.headers.origin}" class="text-pure-white-color">Home</a>
                     </li>
                     <li>
                         <a href="${req.headers.origin}/about" class="text-pure-white-color">About us</a>
@@ -76,9 +77,6 @@
                     </li>
                     <li>
                         <a href="#publications" class="text-pure-white-color">Publications</a>
-                    </li>
-                    <li>
-                        <a href="${req.headers.origin}/donate" class="text-pure-white-color">Donate</a>
                     </li>
                     <li>
                         <a href="#advertise" class="text-pure-white-color">Partner & Advertise with us</a>
@@ -93,16 +91,10 @@
                 <br/>
                 <div class="horizontally-aligned-social-links centered-text centered-block-x">
                     <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-linkedin text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-facebook text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-instagram text-pure-white-color"></span>
-                    </a>
-                    <a href="#" class="socoal-link-in-footer">
-                        <span class="fab fa-youtube text-pure-white-color"></span>
                     </a>
                     <a href="#" class="socoal-link-in-footer">
                         <span class="fab fa-twitter text-pure-white-color"></span>
@@ -119,10 +111,10 @@
                 </div>
                 <br/>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC Art | Africa Diaspora &copy; 2022
+                    Art / Africa / Diaspora &copy; 2022
                 </p>
                 <p class="text-pure-white-color centered-text small-size">
-                    aaDAC online is publishe by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
+                    aaDAC online is published by aaDAC Nonprofit Art Media Limited. All Rights Reserved.
                 </p>
             </div>
         </div>
@@ -135,31 +127,22 @@
             <div class="pop-nav">
                 <ul>
                     <li>
-                        <a href="../">Home</a>
+                        <a href="${req.headers.origin}">Home</a>
                     </li>
                     <li>
-                        <a href="../about">About us</a>
-                    </li>
-                    <li>
-                        <a href="../contact">Contact us</a>
-                    </li>
-                    <li>
-                        <a href="../cowork">Co-work</a>
+                        <a href="${req.headers.origin}/about">About us</a>
                     </li>
                     <li>
                         <a href="#publications">Publications</a>
                     </li>
                     <li>
-                        <a href="../donate">Donate</a>
+                        <a href="${req.headers.origin}/art-residencies-and-opportunities">Art residencies and opportunities</a>
                     </li>
                     <li>
-                        <a href="#residences">Art residencies and opportunities</a>
+                        <a href="${req.headers.origin}/newsletter">Membership</a>
                     </li>
                     <li>
-                        <a href="#advertise">Partner & Advertise with us</a>
-                    </li>
-                    <li>
-                        <a href="#policies">Privacy policy</a>
+                        <a href="${req.headers.origin}/contact">Contact us</a>
                     </li>
                 </ul>
             </div>
