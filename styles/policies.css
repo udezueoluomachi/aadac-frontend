@@ -1,6 +1,9 @@
 .header-preceeder {
     background-image: url("../images/aadac about illustration.jpg");
 }
+.header {
+    border-bottom: 2px solid var(--light-grey);
+}
 .section-2 {
     padding: 20px 10px;
     margin: 20px 0;
@@ -24,41 +27,6 @@
 }
 .descriptive-section p {
     margin-top: 20px;
-}
-.team {
-    margin-top: 20px;
-}
-.team-member {
-    margin-top: 10px;
-    max-width: 690px;
-    margin: auto;
-    margin-top: 20px;
-    border: 10px solid;
-    padding: 30px;
-}
-.team-member p {
-    margin-top: 5px;
-}
-.role-of-member {
-    margin-top: 0;
-}
-.member-image {
-    height: 70vh;
-    width: 80vw;
-    max-height: 200px;
-    max-width: 200px;
-    border: 2px solid ;
-    margin: 12px auto;
-    background-color: var(--pure-black);
-}
-.member-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
-.about-content-extra {
-    padding: 40px;
-    border: 5px solid;
 }
 
 /*responsiveness*/

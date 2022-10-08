@@ -6,7 +6,7 @@ iframe {
     /*remember to add responsive style to this*/
     width: 80vw;
     height: 70vh;
-    object-fit: cover;
+    object-fit: contain;
 }
 .descriptive-section {
     margin: 0 0 0px;
@@ -57,9 +57,16 @@ tr:nth-child(even) {
 }
 figure {
     max-width: 88vw;
-    overflow-x: auto;
+    overflow: auto;
 }
 .descriptive-section a {
     font-style: italic;
     font-weight: bold;
+}
+figure.image img {
+    margin-left: 20px;
+    /*remember to add responsive style to this*/
+    max-width: 80vw;
+    max-height: 70vh;
+    object-fit: contain;
 }
