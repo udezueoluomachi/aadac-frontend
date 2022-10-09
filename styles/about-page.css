@@ -57,7 +57,7 @@
     object-fit: contain;
 }
 .about-content-extra {
-    padding: 40px;
+    padding: 8px;
     border: 5px solid;
 }
 
@@ -97,5 +97,8 @@
         font-size: 3.3vw;
         letter-spacing: 2px;
         word-spacing: 10px;
+    }
+    .about-content-extra {
+        padding: 40px;
     }
 }
