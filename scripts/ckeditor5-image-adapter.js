@@ -17,7 +17,7 @@ class MyUploadAdapter {
     }
     _initRequest() {
         const xhr = this.xhr = new XMLHttpRequest();
-        xhr.open( "POST", 'http://localhost:2022/inline-image-upload', true );
+        xhr.open( "POST", 'https://backend.aadacnetwork.com/inline-image-upload', true );
     }
     _initListeners( resolve, reject, file ) {
         const xhr = this.xhr;
