@@ -1,5 +1,8 @@
-.header-preceeder {
-    background-image: url("../images/aadac about illustration.jpg");
+.real-about-text {
+    margin: 20px 0;
+}
+.header {
+    border-bottom: 2px solid var(--light-grey);
 }
 .section-2 {
     padding: 20px 10px;

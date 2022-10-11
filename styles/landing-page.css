@@ -12,6 +12,9 @@
     margin-top: 60px;
     padding: 10px 30px;
 }
+.news-proclaimer {
+    font-weight: lighter;
+}
 .news-diaply-section , .cowork-section {
     padding: 20px 10px;
 }

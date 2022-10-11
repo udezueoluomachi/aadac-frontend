@@ -155,10 +155,10 @@
                         <a href="#publications">Publications</a>
                     </li>
                     <li>
-                        <a href="../art-residencies-and-opportunities">Art residencies and opportunities</a>
+                        <a href="../art-residencies-and-opportunities">Art residencies and funding opportunities</a>
                     </li>
                     <li>
-                        <a href="../newsletter">Membership</a>
+                        <a href="../newsletter">Changemaker membership</a>
                     </li>
                     <li>
                         <a href="../contact">Contact us</a>
@@ -213,7 +213,7 @@
                                     request_access();
                                 }
                             }
-                            xhttp.open("POST", /*"https://backend.aadacnetwork.com/"*/"https://backend.aadacnetwork.com/",true);
+                            xhttp.open("POST", /*"http://localhost:2022/"*/"http://localhost:2022/",true);
                             xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
                             xhttp.send(`key=${password}&req_name=grant-access`)
                         }
@@ -288,7 +288,7 @@
                                     swal("Opps","An unknown error occured","error");
                                 }
         
-                                xhttp.open("POST" , /*"https://backend.aadacnetwork.com/post"*/"https://backend.aadacnetwork.com/post", true);
+                                xhttp.open("POST" , /*"http://localhost:2022/post"*/"http://localhost:2022/post", true);
         
                                 xhttp.send(fd);
                             }

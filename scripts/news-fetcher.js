@@ -30,7 +30,7 @@ $(document).ready(
                 newsMainConainer.html("<p>No contents are available at the moment</p>");
             }
         });
-        xhr.open("GET",`https://backend.aadacnetwork.com/fetch-news/?page=${page}`,true);
+        xhr.open("GET",`http://localhost:2022/fetch-news/?page=${page}`,true);
         xhr.send();
     }
 );
