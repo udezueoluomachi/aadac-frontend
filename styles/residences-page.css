@@ -51,6 +51,8 @@ h1 {
 .text-contents-for-news * {
     word-break: break-all;
     font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
 }
 .text-contents-for-news a:last-child {
     margin-top: 8px;
