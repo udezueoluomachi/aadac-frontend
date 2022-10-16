@@ -7,7 +7,7 @@
 </head>
 <body>
     <div style="width: 100%;">
-        <div style="color: #000000; max-width: 400px; margin: auto;">
+        <div style="color: #000000; max-width: 400px; margin: auto; ">
             <div style="border-bottom: 0.6px solid #D2D3D5;height: 10vh;min-height: max-content;width: 100%;padding: 5px 10px;">
                 <a href="https://aadacnetwork.com/" style="height: 50px;margin: auto; display: block;">
                     <img src="https://aadacnetwork.com/images/logo.png" alt="aaDAC" style="display: block; height: 32px; margin: auto;"/>
@@ -16,43 +16,34 @@
             <div style="margin: 0 0 0px;padding: 20px 10px;">
                 <h1 style="margin-top: 30px;">Hello, ${e.name}</h1>
                 <p style="margin-top: 20px;">Here are recent Changemaker stories curated for our community!</p>
-                <div style="margin-top: 20px; 
-                height: 350px;
+                <div style="margin-top: 20px;
+                height:auto;
                 width: 100%;
                 max-width: 400px;
-                border: 1px solid #101010;
+                border: 1px solid #c7c7c7;
                 padding: 4px;">
-                    <div class="new-card-image-cont" style="
-                    width: 100%;
-                    margin: 8px auto;
-                    height: 60%;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-attachment: scroll;
-                    background-position: center;
-                    background-origin: border-box;
-                    background-color: #101010;
-                    background-image: url('${cover_photo_url}');"></div>
                     <div class="text-contents-for-news" style="
                     width: 100%;
                     margin: 8px auto;
-                    height: 35%;
                     padding: 0 6px;
                     overflow: hidden;
-                    text-overflow: ellipsis;">
-                        <a href="${news_url}" class="news-title" style="
-                        color: #101010;
-                        display:block;
-                        word-break: break-all;
-                        font-style: italic;
-                        font-weight: bold;">${news_title}</a>
-                        <a href="${news_url}" class="news-description-cont" style="
-                        color: #101010;
-                        display:block;
-                        word-break: break-all;
-                        font-style: italic;
-                        font-weight: bold;
-                        margin-top: 8px;">${news_description}</a>
+                    text-overflow: ellipsis; ">
+                    <h2 href="${news_url}" class="news-title" style="
+                    color: #101010;
+                    display:block;
+                    word-break: break-all;">${news_title}</h2>
+                    <p href="${news_url}" class="news-description-cont" style="
+                    color: #101010;
+                    display:block;
+                    word-break: break-all;
+                    margin-top: 8px;">${news_description} </p>
+                    <a href="${news_url}" class="news-description-cont" style="
+                    color: #101010;
+                    display:block;
+                    word-break: break-all;
+                    font-style: italic;
+                    font-weight: bold;
+                    margin-top: 16px;">Read full news</a>
                     </div>
                 </div>
             </div>
